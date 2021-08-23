@@ -8,7 +8,8 @@
       "includePath": [
         "/opt/ros/galactic/include/**",
         "/usr/include/**",
-        "/usr/local/include/**"
+        "/usr/local/include/**",
+        "include/**"
       ],
       "name": "ROS",
       "intelliSenseMode": "gcc-x64",
