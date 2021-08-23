@@ -12,9 +12,10 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+#include "cpp_py_mixed_pkg/listener_component.hpp"
+
 #include <string>
 
-#include "cpp_py_mixed_pkg/visibility_control.h"
 #include "rclcpp/rclcpp.hpp"
 #include "rclcpp_components/register_node_macro.hpp"
 #include "std_msgs/msg/string.hpp"
@@ -26,7 +27,7 @@ namespace cpp_py_mixed_pkg
 class Listener : public rclcpp::Node
 {
 public:
-  DEMO_NODES_CPP_PUBLIC
+  CPP_PY_MIXED_PKG_LISTENER_COMPONENT_PUBLIC
   explicit Listener(const rclcpp::NodeOptions & options) : Node("listener", options)
   {
     RCLCPP_ERROR(get_logger(), "initialize");
