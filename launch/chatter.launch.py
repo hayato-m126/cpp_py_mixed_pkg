@@ -13,8 +13,16 @@ def generate_launch_description():
         name="listner",
     )
 
+    talker_node = Node(
+        package="cpp_py_mixed_pkg",
+        executable="talker.py",
+        output="screen",
+        name="talker",
+    )
+
     return launch.LaunchDescription(
         [
             listener_node,
+            talker_node,
         ]
     )

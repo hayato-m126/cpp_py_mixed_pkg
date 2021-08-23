@@ -7,6 +7,7 @@ endif()
 
 # find dependencies
 find_package(ament_cmake_auto REQUIRED)
+find_package(ament_cmake_python REQUIRED)
 ament_auto_find_build_dependencies()
 
 include_directories(
@@ -24,6 +25,15 @@ rclcpp_components_register_node(listener_component
 install(
   DIRECTORY launch
   DESTINATION share/${PROJECT_NAME}
+)
+
+# Install Python modules
+ament_python_install_package(${PROJECT_NAME})
+
+# Install Python executables
+install(PROGRAMS
+  scripts/talker.py
+  DESTINATION lib/${PROJECT_NAME}
 )
 
 if(BUILD_TESTING)
